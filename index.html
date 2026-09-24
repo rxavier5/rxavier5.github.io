@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Xavier | Rutgers Business School</title>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              scarlet: '#cc0033',   /* Rutgers Scarlet accent */
+              scarletDark: '#990026',
+              charcoal: '#0f172a',
+              cardBg: '#1e293b',
+              muted: '#94a3b8',
+              border: '#334155'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom refined glow and gradient utilities */
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(204, 0, 51, 0.12) 0%, rgba(15, 23, 42, 0) 70%);
+    }
+    .card-hover-effect {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover-effect:hover {
+      transform: translateY(-4px);
+      border-color: rgba(204, 0, 51, 0.4);
+      box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-red-900 selection:text-white relative min-h-screen flex flex-col justify-between">
+
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-scarlet to-rose-600 text-white font-display font-bold text-lg flex items-center justify-center shadow-lg shadow-red-900/30 group-hover:scale-105 transition-transform">
+          RX
+        </span>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-base tracking-tight text-white group-hover:text-red-400 transition-colors">Ryan Xavier</span>
+          <span class="text-xs text-brand-muted font-medium">Rutgers Business School</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects & Analytics</a>
+        <a href="#skills" class="hover:text-white transition-colors">Expertise</a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-scarlet hover:bg-brand-scarletDark text-white text-xs font-semibold tracking-wide uppercase shadow-md transition-all">
+          Get In Touch
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pt-2 pb-6 bg-slate-900/95 border-b border-slate-800 backdrop-blur-md">
+      <div class="flex flex-col gap-4 text-sm font-medium text-slate-300 mt-2">
+        <a href="#about" class="mobile-nav-link py-2 hover:text-white">About Me</a>
+        <a href="#experience" class="mobile-nav-link py-2 hover:text-white">Experience & Leadership</a>
+        <a href="#projects" class="mobile-nav-link py-2 hover:text-white">Projects & Coursework</a>
+        <a href="#skills" class="mobile-nav-link py-2 hover:text-white">Skills & Toolkit</a>
+        <a href="#contact" class="mobile-nav-link inline-block text-center py-2.5 rounded-lg bg-brand-scarlet text-white font-semibold">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-24">
+    <section id="hero" class="relative hero-glow pt-16 pb-20 md:pt-28 md:pb-32 px-6">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-16">
+        
+        <div class="flex-1 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-red-500/20 bg-red-950/40 text-red-400 text-xs font-semibold mb-6 uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            Rutgers Business School '27
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white mb-6 leading-tight">
+            Bridging Business Operations with <span class="bg-gradient-to-r from-red-500 via-rose-400 to-amber-300 bg-clip-text text-transparent">Data-Driven Strategy</span>.
+          </h1>
+          <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed max-w-2xl font-light">
+            I'm <strong class="text-white font-semibold">Ryan Xavier</strong>, an aspiring Supply Chain & Business Analytics specialist studying at Rutgers University. Focused on lean supply networks, predictive forecasting, and operational optimization.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <a href="#contact" class="px-6 py-3.5 rounded-xl bg-brand-scarlet hover:bg-brand-scarletDark text-white font-semibold text-sm shadow-lg shadow-red-900/40 transition-all flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              Connect With Me
+            </a>
+            <a href="#projects" class="px-6 py-3.5 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
+              <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+              View Projects
+            </a>
+          </div>
+
+          <!-- Quick facts pill bar -->
+          <div class="mt-10 pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+            <div>
+              <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Major</p>
+              <p class="text-sm font-semibold text-white mt-0.5">Supply Chain & Analytics</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Institution</p>
+              <p class="text-sm font-semibold text-white mt-0.5">Rutgers, New Brunswick</p>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <p class="text-xs uppercase tracking-wider text-slate-400 font-medium">Focus Area</p>
+              <p class="text-sm font-semibold text-white mt-0.5">Logistics & Predictive Modeling</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full max-w-xs md:max-w-sm flex-shrink-0">
+          <div class="relative group">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-red-600 to-amber-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+            
+            <div class="relative bg-slate-900 rounded-2xl p-4 border border-slate-800 shadow-2xl">
+              <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-slate-800 relative">
+                <!-- Headshot Image with fallback placehold.co -->
+                <img 
+                  id="profileImage"
+                  src="headshot.jpg" 
+                  alt="Ryan Xavier - Professional Headshot"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x750/1e293b/f8fafc?text=Ryan+Xavier\\n(headshot.jpg)';"
+                  class="w-full h-full object-cover object-top transition duration-300 group-hover:scale-105"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 text-left">
+                  <span class="inline-block px-2.5 py-1 bg-red-600/90 text-white text-[11px] font-bold rounded tracking-wide uppercase mb-1">Undergraduate</span>
+                  <p class="text-xs text-slate-300">Rutgers Business School</p>
+                </div>
+              </div>
+              <div class="mt-4 flex items-center justify-between px-2">
+                <span class="text-xs font-mono text-slate-400">Piscataway / New Brunswick, NJ</span>
+                <span class="flex h-2.5 w-2.5 relative">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 border-t border-slate-900 bg-slate-950/60">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-0.5 w-8 bg-brand-scarlet"></div>
+          <span class="text-xs font-bold uppercase tracking-widest text-red-500">Background & Ambition</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-10 tracking-tight">About Me</h2>
+
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-7 space-y-5 text-slate-300 font-normal leading-relaxed">
+            <p>
+              Hello! I am a student at the <strong class="text-white">Rutgers Business School</strong> double concentrating in Supply Chain Management and Business Analytics. My interest lies at the intersection of operational engineering, continuous improvement, and actionable quantitative modeling.
+            </p>
+            <p>
+              Through intensive coursework and extracurricular leadership, I have developed expertise in mapping end-to-end supply chains, analyzing inventory flow discrepancies, and applying Python and SQL to eliminate logistics bottlenecks. 
+            </p>
+            <p>
+              I believe modern global commerce thrives on agile systems and transparent data. When I'm not running simulations or deciphering cost variances, I can be found mentoring peers in quantitative methods or organizing professional development workshops.
+            </p>
+
+            <div class="pt-4 flex flex-wrap gap-3">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-red-500"></i> Lean Six Sigma Foundations
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-red-500"></i> Predictive Demand Planning
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-red-500"></i> ERP & SAP Fundamentals
+              </span>
+            </div>
+          </div>
+
+          <!-- Academic Highlights Sidebar Card -->
+          <div class="md:col-span-5 bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <h3 class="text-lg font-display font-semibold text-white mb-4 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-red-500"></i> Education Details
+            </h3>
+
+            <div class="space-y-4 text-sm">
+              <div>
+                <p class="text-white font-medium">Rutgers Business School – Newark and New Brunswick</p>
+                <p class="text-slate-400 text-xs mt-0.5">Bachelor of Science in Supply Chain Management</p>
+                <p class="text-slate-500 text-xs">Minor in Business Analytics & Information Technology</p>
+              </div>
+
+              <div class="border-t border-slate-800 pt-3">
+                <p class="text-xs uppercase font-semibold tracking-wider text-slate-400 mb-1">Key Relevant Coursework</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-[11px]">Demand Planning & Fulfillment</span>
+                  <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-[11px]">Business Decision Analytics</span>
+                  <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-[11px]">Procurement Strategy</span>
+                  <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-[11px]">Operations Management</span>
+                  <span class="px-2 py-1 bg-slate-800 text-slate-300 rounded text-[11px]">Database Management (SQL)</span>
+                </div>
+              </div>
+
+              <div class="border-t border-slate-800 pt-3 flex justify-between items-center text-xs">
+                <span class="text-slate-400">Campus Involvement</span>
+                <span class="text-red-400 font-semibold">SCMA & Rutgers Consulting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience" class="py-20 px-6 border-t border-slate-900">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-0.5 w-8 bg-brand-scarlet"></div>
+          <span class="text-xs font-bold uppercase tracking-widest text-red-500">Track Record</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-12 tracking-tight">Experience & Leadership</h2>
+
+        <!-- Timeline container -->
+        <div class="relative pl-6 md:pl-8 border-l border-slate-800 space-y-12">
+
+          <!-- Role 1 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-red-500 group-hover:bg-red-500 transition-colors"></span>
+            
+            <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 card-hover-effect">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold text-white">Supply Chain & Operations Intern</h3>
+                <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-400 w-fit">Summer 2025</span>
+              </div>
+              <p class="text-red-400 text-sm font-medium mb-3">Tri-State Logistics Solutions &bull; Edison, NJ</p>
+              <ul class="list-disc list-inside text-sm text-slate-300 space-y-2 leading-relaxed">
+                <li>Analyzed outbound distribution bottlenecks across 4 fulfillment hubs using Tableau, decreasing mean transfer latency by 14%.</li>
+                <li>Audited carrier vendor scorecards and evaluated key performance indicators (OTIF, dwell time, fuel surcharges) to support contract renegotiations.</li>
+                <li>Partnered with cross-functional inventory teams to implement barcode reconciliation flows, reducing misplacement variances.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-red-500 group-hover:bg-red-500 transition-colors"></span>
+            
+            <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 card-hover-effect">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold text-white">Vice President of Corporate Relations</h3>
+                <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-400 w-fit">Fall 2024 – Present</span>
+              </div>
+              <p class="text-red-400 text-sm font-medium mb-3">Rutgers Supply Chain Management Association (RSCMA)</p>
+              <ul class="list-disc list-inside text-sm text-slate-300 space-y-2 leading-relaxed">
+                <li>Spearheaded corporate relations for an organization of 250+ undergraduate members, coordinating panel events with Fortune 500 supply leaders.</li>
+                <li>Curated technical workshops on Excel VBA, PowerBI dashboarding, and freight forwarder dynamics.</li>
+                <li>Managed budget allocations and secured corporate sponsorships for the annual RBS Spring Case Competition.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="relative group">
+            <span class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-red-500 group-hover:bg-red-500 transition-colors"></span>
+            
+            <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 card-hover-effect">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold text-white">Undergraduate Research & Analytics Assistant</h3>
+                <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-400 w-fit">Spring 2024</span>
+              </div>
+              <p class="text-red-400 text-sm font-medium mb-3">Rutgers Center for Supply Chain Research</p>
+              <ul class="list-disc list-inside text-sm text-slate-300 space-y-2 leading-relaxed">
+                <li>Assisted faculty in compiling large freight dataset metrics to model post-disruption resilience in oceanic container shipping routes.</li>
+                <li>Executed data scraping, cleansing, and normalization routines in Python (pandas, numpy) covering historical vessel transit points.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 border-t border-slate-900 bg-slate-950/60">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-0.5 w-8 bg-brand-scarlet"></div>
+          <span class="text-xs font-bold uppercase tracking-widest text-red-500">Portfolio</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4 tracking-tight">Projects & Coursework</h2>
+        <p class="text-slate-400 text-sm mb-12 max-w-xl">A selection of analytical investigations, simulated operational networks, and business case evaluations developed at Rutgers.</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Project Card 1 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between card-hover-effect">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="p-3 bg-red-950/60 border border-red-900/40 rounded-xl text-red-400">
+                  <i data-lucide="trending-up" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[11px] font-mono font-medium text-slate-400">Capstone Project</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Predictive Inventory Optimization</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Developed an ARIMA forecasting model using historical SKU demand logs to minimize safety stock holdings without elevating stockout risk above 1.5%.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Python</span>
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Pandas</span>
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Time-Series</span>
+              </div>
+              <div class="text-xs text-red-400 font-semibold flex items-center gap-1">
+                Completed for RBS Advanced Analytics &bull; 2025
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between card-hover-effect">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="p-3 bg-red-950/60 border border-red-900/40 rounded-xl text-red-400">
+                  <i data-lucide="truck" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[11px] font-mono font-medium text-slate-400">Case Competition</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Omnichannel Cold Chain Design</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Redesigned the northeast distribution topology for temperature-controlled pharma goods, optimizing hub location choices and carrier lane pricing.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Network Design</span>
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Linear Programming</span>
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Excel Solver</span>
+              </div>
+              <div class="text-xs text-red-400 font-semibold flex items-center gap-1">
+                Finalist &bull; Rutgers Case Challenge
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between card-hover-effect">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="p-3 bg-red-950/60 border border-red-900/40 rounded-xl text-red-400">
+                  <i data-lucide="database" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[11px] font-mono font-medium text-slate-400">Database Design</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Supplier KPI Management DB</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                Structured a relational PostgreSQL database schema tracking tier-1 supplier SLA compliance, lead times, defect PPM rates, and invoice reconciliation.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">PostgreSQL</span>
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Tableau</span>
+                <span class="text-[10px] font-medium px-2 py-1 bg-slate-800 rounded text-slate-300">Relational Modeling</span>
+              </div>
+              <div class="text-xs text-red-400 font-semibold flex items-center gap-1">
+                Enterprise Data Architecture Project
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 px-6 border-t border-slate-900">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="h-0.5 w-8 bg-brand-scarlet"></div>
+          <span class="text-xs font-bold uppercase tracking-widest text-red-500">Core Competencies</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-10 tracking-tight">Skills & Technical Toolkit</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+            <h4 class="font-display font-semibold text-white text-sm mb-3 flex items-center gap-2">
+              <i data-lucide="cpu" class="w-4 h-4 text-red-500"></i> Analytics & Code
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center justify-between"><span>Python (Pandas, Scikit)</span><span class="text-slate-500 font-mono">Proficient</span></li>
+              <li class="flex items-center justify-between"><span>SQL (Postgres, MySQL)</span><span class="text-slate-500 font-mono">Advanced</span></li>
+              <li class="flex items-center justify-between"><span>R & Statistical Tests</span><span class="text-slate-500 font-mono">Intermediate</span></li>
+              <li class="flex items-center justify-between"><span>Excel (VBA, PowerQuery)</span><span class="text-slate-500 font-mono">Expert</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+            <h4 class="font-display font-semibold text-white text-sm mb-3 flex items-center gap-2">
+              <i data-lucide="layers" class="w-4 h-4 text-red-500"></i> Supply Chain
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center justify-between"><span>Inventory Optimization</span><span class="text-slate-500 font-mono">EOQ / Safety</span></li>
+              <li class="flex items-center justify-between"><span>Logistics & 3PL Mgmt</span><span class="text-slate-500 font-mono">Operations</span></li>
+              <li class="flex items-center justify-between"><span>ERP Systems (SAP S/4)</span><span class="text-slate-500 font-mono">Academic</span></li>
+              <li class="flex items-center justify-between"><span>Supplier Sourcing</span><span class="text-slate-500 font-mono">RFP / RFQ</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+            <h4 class="font-display font-semibold text-white text-sm mb-3 flex items-center gap-2">
+              <i data-lucide="pie-chart" class="w-4 h-4 text-red-500"></i> BI & Visualization
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center justify-between"><span>Tableau Desktop</span><span class="text-slate-500 font-mono">Dashboards</span></li>
+              <li class="flex items-center justify-between"><span>Microsoft Power BI</span><span class="text-slate-500 font-mono">DAX</span></li>
+              <li class="flex items-center justify-between"><span>Executive Reporting</span><span class="text-slate-500 font-mono">Decks</span></li>
+              <li class="flex items-center justify-between"><span>KPI Scorecarding</span><span class="text-slate-500 font-mono">Metrics</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-900/70 border border-slate-800 p-5 rounded-2xl">
+            <h4 class="font-display font-semibold text-white text-sm mb-3 flex items-center gap-2">
+              <i data-lucide="award" class="w-4 h-4 text-red-500"></i> Methodologies
+            </h4>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center justify-between"><span>Lean / Kaizen</span><span class="text-slate-500 font-mono">5S</span></li>
+              <li class="flex items-center justify-between"><span>Six Sigma DMAIC</span><span class="text-slate-500 font-mono">Green Belt</span></li>
+              <li class="flex items-center justify-between"><span>Agile / Scrum Basics</span><span class="text-slate-500 font-mono">Framework</span></li>
+              <li class="flex items-center justify-between"><span>Risk Mitigation</span><span class="text-slate-500 font-mono">FMEA</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 border-t border-slate-900 bg-slate-950">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-b from-slate-900 to-slate-900/60 border border-slate-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+          
+          <div class="absolute -top-24 -right-24 w-60 h-60 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-500/20 bg-red-950/30 text-red-400 text-xs font-semibold mb-4 uppercase tracking-wider">
+              Let's Connect
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">Ready to Discuss Opportunities?</h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+              I am actively seeking internships, co-ops, and analytical projects in supply chain planning, procurement, and data consulting. Feel free to reach out via email or connect with me on LinkedIn.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-8">
+            <a href="mailto:ryan.xavier@rutgers.edu" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 transition-all group">
+              <div class="w-12 h-12 rounded-lg bg-red-600/20 text-red-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-xs text-slate-400 font-medium">Direct Email</div>
+                <div class="text-sm font-semibold text-white truncate group-hover:text-red-300 transition-colors">ryan.xavier@rutgers.edu</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ryan-xavier" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 transition-all group">
+              <div class="w-12 h-12 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="text-xs text-slate-400 font-medium">LinkedIn Network</div>
+                <div class="text-sm font-semibold text-white truncate group-hover:text-blue-300 transition-colors">linkedin.com/in/ryan-xavier</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Quick Copy Email Button & Notice -->
+          <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-400">Based in the Greater New York & New Jersey Area</p>
+            <button id="copyEmailBtn" class="text-xs font-semibold px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors flex items-center gap-2">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copyBtnText">Copy Email Address</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-900 bg-slate-950 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-brand-scarlet text-white font-display font-bold text-xs flex items-center justify-center">RX</span>
+        <span class="text-xs text-slate-400">&copy; <span id="year"></span> Ryan Xavier &bull; Rutgers Business School</span>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="https://www.linkedin.com/in/ryan-xavier" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+          LinkedIn <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Notification Toast for Copy to Clipboard -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-800 border border-slate-700 text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2">
+    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+    <span>Email copied to clipboard!</span>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Dynamic Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Copy Email to Clipboard helper
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+    const toast = document.getElementById('toast');
+
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'ryan.xavier@rutgers.edu';
+      
+      // Use hidden textarea fallback for iframe resilience
+      const tempInput = document.createElement('textarea');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        
+        // Show Toast
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        copyBtnText.textContent = 'Copied!';
+
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-20', 'opacity-0');
+          copyBtnText.textContent = 'Copy Email Address';
+        }, 2600);
+      } catch (err) {
+        console.error('Copy action was unsuccessful', err);
+      }
+      document.body.removeChild(tempInput);
+    });
+  </script>
+</body>
+</html>
